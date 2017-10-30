@@ -1,0 +1,56 @@
+{
+    "general_settings": [
+        {
+            "user_follower_limit": 1000,
+            "comments_settings": [
+                {
+                    "comments": [
+                        "awwww <3",
+                        "so cute! <3",
+                        "i want to hug it so much!"
+                    ],
+                    "comment_tags": [
+                        "cuteanimals",
+                        "hamster",
+                        "rat",
+                        "hamstergram",
+                        "cutehamster",
+                        "hamsters",
+                        "fluffy",
+                        "dog",
+                        "puppies",
+                        "dogsofinstagram",
+                        "bird"
+                    ],
+                    "comment_percentage": 40,
+                    "comment_amount": 100,
+                    "comment_media": "Photo"
+                }
+            ],
+            "follow_settings": [
+                {
+                    "follow_user_followers": [
+                        "cute.animals",
+                        "cute",
+                        "puppygrms",
+                        "cats_of_instagram",
+                        "sweetcatclub",
+                        "krazymeows",
+                        "lovelycatonline"
+                    ],
+                    "follow_percentage": 60,
+                    "follow_amount": 50,
+                    "follow_random": false,
+                    "follow_delay": 60
+                }
+            ],
+            "unfollow_settings": [
+                {
+                    "unfollow_amount": 500,
+                    "unfollow_method": "FIFO",
+                    "unfollow_delay": 60
+                }
+            ]
+        }
+    ]
+}
