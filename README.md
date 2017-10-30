@@ -1,5 +1,36 @@
 <img src="https://i.imgur.com/sJzfZsL.jpg" width="150" align="right">
 
+## ATTENTION!
+This is a modification of the original content to insert arguments into the execution.
+All settings that were previously made in code are now in the file **settings.json**
+
+### Instructions
+**Usage:**
+
+For help:
+```bash
+$ python run.py -h
+```
+Simple login:
+```bash
+$ python run.py -u <USERNAME> -p <PASSWORD>
+```
+Options are:
+
+* **-h** - HELP
+* **-u** - USERNAME *required
+* **-p** - PASSWORD *required
+* **-f** - Start the following proccess 
+* **-un** - Start the unfollowing proccess
+* **-c** - Start the comments by tags
+
+### The actual code
+* **Comments:** The bot will comment in one type of media by TAGS
+* **Following:** The bot will follow accounts that follow the users set up
+* **Unfollow:** The bot will unfollow users ignoring if they are active users or if they weren't followed by the bot
+
+<br><br>
+
 # InstaPy
 [![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/timgrossmann/InstaPy/blob/master/LICENSE)
 [![built with Selenium](https://img.shields.io/badge/built%20with-Selenium-yellow.svg)](https://github.com/SeleniumHQ/selenium)
