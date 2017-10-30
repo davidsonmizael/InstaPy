@@ -2,6 +2,7 @@
     "general_settings": [
         {
             "user_follower_limit": 1000,
+            "no_gui": false,
             "comments_settings": [
                 {
                     "comments": [

@@ -9,6 +9,7 @@ with open('settings.json') as settings_file:
     settings = json.load(settings_file)
 
 follower_limit = settings["general_settings"][0]["user_follower_limit"]
+nogui = settings["general_settings"][0]["no_gui"]
 
 #comments
 comment_settings = settings["general_settings"][0]["comments_settings"][0]
@@ -45,7 +46,7 @@ args = parser.parse_args()
 insta_username = args.username
 insta_password = args.password
 
-session = InstaPy(username=args.username, password=args.password)
+session = InstaPy(username=args.username, password=args.password, nogui=nogui)
 session.login()
 
 session.set_upper_follower_count(limit=follower_limit)
