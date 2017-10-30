@@ -194,7 +194,7 @@ def follow_user(browser, follow_restrict, login, user_name):
 
     try:
         follow_button = browser.find_element_by_xpath(
-            "//*[contains(text(), 'Follow')]")
+                "//button[text()='Follow']")
 
         # Do we still need this sleep?
         sleep(2)
@@ -266,11 +266,10 @@ def follow_through_dialog(browser,
                           is_random,
                           delay,
                           callbacks=[]):
-    followNum = 0
     sleep(2)
     person_followed = []
-
-    if is_random:
+    real_amount = amount
+    if is_random and amount >= 3:
         # expanding the popultaion for better sampling distribution
         amount = amount * 3
 
@@ -290,6 +289,8 @@ def follow_through_dialog(browser,
     abort = False
     total_list = len(follow_buttons)
 
+    # scroll down if the generated list of user to follow is not enough to
+    # follow amount set
     while (total_list < amount) and not abort:
         amount_left = amount - total_list
         before_scroll = total_list
@@ -318,14 +319,17 @@ def follow_through_dialog(browser,
         hasSlept = False
         btnPerson = list(zip(follow_buttons, person_list))
         if is_random:
-            sample = random.sample(range(0, len(follow_buttons)), amount)
+            sample = random.sample(range(0, len(follow_buttons)), real_amount)
             finalBtnPerson = []
             for num in sample:
                 finalBtnPerson.append(btnPerson[num])
         else:
             finalBtnPerson = btnPerson
+
+        followNum = 0
+
         for button, person in finalBtnPerson:
-            if followNum >= amount:
+            if followNum >= real_amount:
                 print("--> Total followNum reached: ", followNum)
                 break
 

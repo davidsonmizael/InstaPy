@@ -22,7 +22,7 @@ Head over to https://github.com/timgrossmann/InstaPy/wiki/Reporting-An-Issue to 
 
 ### Social
 
-#### [InstaPy Twitter](https://twitter.com/InstaPy) | [My Twitter](https://twitter.com/timigrossmann) | [How it works (Medium)](https://medium.freecodecamp.com/my-open-source-instagram-bot-got-me-2-500-real-followers-for-5-in-server-costs-e40491358340) | [Check out the talk](https://youtu.be/4TmKFZy-ioQ) | [Support InstaPy!](https://www.paypal.me/supportInstaPy)
+#### [Slack Workspace](https://join.slack.com/t/instapy/shared_invite/enQtMjYzNTgwMDg3MDEyLTk2NWI0MjY2MTVjYmM2NjFlYjVmMmE0ZjU1OGQ0OWM2MTQwOTc1NTIyOGVhZDEwMTFkYzFmODE5ZWIxZjhjMTQ) | [InstaPy Twitter](https://twitter.com/InstaPy) | [My Twitter](https://twitter.com/timigrossmann) | [How it works (Medium)](https://medium.freecodecamp.com/my-open-source-instagram-bot-got-me-2-500-real-followers-for-5-in-server-costs-e40491358340) | [Check out the talk](https://youtu.be/4TmKFZy-ioQ) | [Support InstaPy!](https://www.paypal.me/supportInstaPy)
 
 [![paypal](https://img.shields.io/badge/-PayPal-blue.svg)](https://www.paypal.me/supportInstaPy)
 
@@ -45,8 +45,9 @@ Table of Contents
   * [Unfollowing](#unfollowing)
   * [Prevents unfollow active users](#prevents-unfollow-active-users)
   * [Interactions based on the number of followers a user has](#interactions-based-on-the-number-of-followers-a-user-has)
-  * [Locations](#locations)
-  * [Feeds](#feeds)
+  * [Like by Locations](#like-by-locations)
+  * [Like by Tags](#like-by-tags)
+  * [Like by Feeds](#like-by-feeds)
   * [Restricting Likes](#restricting-likes)
   * [Ignoring Users](#ignoring-users)
   * [Ignoring Restrictions](#ignoring-restrictions)
@@ -283,7 +284,7 @@ session.set_upper_follower_count(limit = 250)
 session.set_lower_follower_count(limit = 1)
 ```
 
-### Locations
+### Like by Locations
 
 ```python
 session.like_by_locations(['224442573/salton-sea/'], amount=100)
@@ -303,7 +304,14 @@ Example:
 * The url is: https://www.instagram.com/explore/locations/224442573/salton-sea/
 * Use everything after 'locations/' or just the number
 
-### Feeds
+### Like by Tags
+
+```python
+# Like posts based on hashtags
+session.like_by_tags(['natgeo', 'world'], amount=10)
+```
+
+### Like by Feeds
 
 ```python
 # This is used to perform likes on your own feeds
