@@ -49,7 +49,7 @@
                 {
                     "unfollow_amount": 500,
                     "unfollow_method": "FIFO",
-                    "unfollow_delay": 60
+                    "unfollow_delay": 15
                 }
             ]
         }

@@ -83,7 +83,7 @@ def unfollow(browser,
 
                 if person not in dont_include:
                     browser.get('https://www.instagram.com/' + person)
-                    sleep(2)
+                    #sleep(2)
                     follow_button = browser.find_element_by_xpath(
                         "//*[contains(text(), 'Follow')]")
 
@@ -100,7 +100,7 @@ def unfollow(browser,
                               ', now unfollowing: {}'
                               .format(person.encode('utf-8')))
 
-                        sleep(15)
+                        #sleep(15)
 
                         if hasSlept:
                             hasSlept = False

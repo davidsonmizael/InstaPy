@@ -62,7 +62,6 @@ if args.follow_flag:
 
 
 if args.unfollow_flag:
-    session.unfollow_users(amount=unfollow_amount, onlyInstapyMethod = 'unfollow_method', sleep_delay=unfollow_delay )
-    #session.set_unfollow_active_users(enabled=False, posts=5)
+    session.unfollow_users(amount=unfollow_amount, onlyInstapyMethod = unfollow_method, sleep_delay=unfollow_delay )
 
 session.end()
