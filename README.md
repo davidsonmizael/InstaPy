@@ -23,6 +23,7 @@ Options are:
 * **-f** - Start the following proccess 
 * **-un** - Start the unfollowing proccess
 * **-c** - Start the comments by tags
+* **-j** - Loads another json configuration file
 
 ### The actual code
 * **Comments:** The bot will comment in one type of media by TAGS

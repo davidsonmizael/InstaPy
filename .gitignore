@@ -98,3 +98,7 @@ ENV/
 
 # Editors
 .idea
+
+start.bat
+
+logs/*.csv

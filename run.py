@@ -5,7 +5,21 @@ from pprint import pprint
 
 print("PLEASE BE SURE YOU HAVE ALREADY SET UP THE FILE settings.json BEFORE STARTING THIS")
 
-with open('settings.json') as settings_file:
+##json file
+
+parser = argparse.ArgumentParser(description='Instagram bot with python')
+parser.add_argument('-u','--username', help='Instagram username', action="store", dest="username", required=True)
+parser.add_argument('-p','--password', help='Instagram password', action="store", dest="password", required=True)
+parser.add_argument('-un', help='the amount of users to unfollow', action='store_true', default=False, dest='unfollow_flag')
+parser.add_argument('-f', help='the amount of users to follow', action='store_true', default=False, dest='follow_flag')
+parser.add_argument('-c', help='set comments', action='store_true', default=False, dest='comment_flag')
+parser.add_argument('-j','--json', help='Json configuration file', action='store', default='settings.json', dest='json')
+
+args = parser.parse_args()
+
+
+###json
+with open(args.json) as settings_file:
     settings = json.load(settings_file)
 
 follower_limit = settings["general_settings"][0]["user_follower_limit"]
@@ -32,16 +46,6 @@ unfollow_settings = settings["general_settings"][0]["unfollow_settings"][0]
 unfollow_amount = unfollow_settings["unfollow_amount"]
 unfollow_method = unfollow_settings["unfollow_method"]
 unfollow_delay = unfollow_settings["unfollow_delay"]
-
-
-parser = argparse.ArgumentParser(description='Instagram bot with python')
-parser.add_argument('-u','--username', help='Instagram username', action="store", dest="username", required=True)
-parser.add_argument('-p','--password', help='Instagram password', action="store", dest="password", required=True)
-parser.add_argument('-un', help='the amount of users to unfollow', action='store_true', default=False, dest='unfollow_flag')
-parser.add_argument('-f', help='the amount of users to follow', action='store_true', default=False, dest='follow_flag')
-parser.add_argument('-c', help='set comments', action='store_true', default=False, dest='comment_flag')
-
-args = parser.parse_args()
 
 insta_username = args.username
 insta_password = args.password
